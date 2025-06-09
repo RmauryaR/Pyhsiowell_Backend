@@ -27,11 +27,7 @@ app.use("/api/services", require("./routes/serviceRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 
 // MongoDB Connection
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+mongoose.connect(MONGO_URI);
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error(err));
 
